@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Independent Studies</title>
+    <head>
+  <title>My Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <h1>Independent Studies</h1>
+<nav class="main-nav">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+</nav>
+
+<div class="thumbnail-grid">
+
+  <div class="thumbnail-item">
+    <img src="images/Gridsinagridvariation1.jpeg" alt="Series One" class="thumbnail" onclick="openGallery('series1')">
+    <p class="thumbnail-title">Grids in a Grid, Variation 1, 2024</p>
+  </div>
+
+</div>
+
+<!-- Lightbox container -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content"></div>
+</div>
+
+
+<footer class="site-footer">
+  <a href="https://instagram.com/felicityspaintbrush" target="_blank" aria-label="Instagram">
+    <img src="images/instagram.svg" alt="Instagram" class="instagram-icon">
+  </a>
+  <p class="copyright"> 
+    &copy; 2026 Felicity Nutt. All rights reserved.
+  </p>
+
+ <script>
+const galleries = {
+  series1: [
+    "images/Gridsinagridvariation1.jpeg",
+    "images/Gridsinagridvariation1detail.jpeg",
+    "images/Gridsinagridvariation1detailb.jpeg"
+  ]
+};
+
+function openGallery(series) {
+  const lightboxContent = document.querySelector('.lightbox-content');
+  lightboxContent.innerHTML = '<span class="close" onclick="closeGallery()">&times;</span>';
+
+  galleries[series].forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    lightboxContent.appendChild(img);
+  });
+
+  document.getElementById('lightbox').style.display = 'block';
+}
+
+function closeGallery() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
+
+  </body>
+</html>
